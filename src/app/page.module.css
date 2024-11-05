@@ -11,7 +11,7 @@
   align-items: center;
   justify-items: center;
   min-height: 100svh;
-  padding: 80px;
+  padding: 0 80px 80px;
   gap: 64px;
   font-family: var(--font-geist-sans);
 }
@@ -35,7 +35,7 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 12px;
   grid-row-start: 2;
 }
 
@@ -148,6 +148,9 @@ a.secondary {
     align-items: center;
     justify-content: center;
   }
+}
+.logo {
+  max-width: 100%;
 }
 
 @media (prefers-color-scheme: dark) {

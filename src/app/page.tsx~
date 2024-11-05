@@ -17,7 +17,7 @@ export default function Home() {
         <Image
           className={styles.logo}
           src="/react-code.svg"
-          alt="react code logo"
+          alt="Next.js logo"
           width={310}
           height={80}
           priority
