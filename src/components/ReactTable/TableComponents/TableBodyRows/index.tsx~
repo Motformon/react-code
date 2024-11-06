@@ -1,0 +1,97 @@
+import React from 'react';
+import ErrorBoundary from "../../../ErrorBoundary";
+import styles from "./style.module.scss";
+import {Row} from "@tanstack/react-table";
+import {TableBody, TableCell, TableRow} from "@mui/material";
+import TableBodyRow from "./TableBodyRow";
+import {VirtualItem} from "react-virtual";
+
+type Props = {
+  rows: Row<any>[];
+  noDataText: string | undefined;
+  virtualRows: VirtualItem[];
+  totalSize: number;
+  onClickRow: undefined | ((row: Row<any>, event?: any) => void);
+  columnsSize: number;
+  rowActive: number | undefined;
+  isExpanded: boolean | undefined;
+  isWithSubRowsClick: boolean | undefined;
+  link: undefined | ((row: Row<any>) => {
+    path: string,
+    name: string,
+    extraPath?: string,
+  });
+  renderSubComponent: undefined | ((props: { row: Row<any> }) => React.ReactElement);
+};
+
+const TableBodyRows: React.FC<Props> = (props) => {
+
+  const {
+    rows,
+    noDataText,
+    virtualRows,
+    totalSize,
+    onClickRow,
+    columnsSize,
+    isExpanded,
+    rowActive,
+    link,
+    isWithSubRowsClick,
+    renderSubComponent
+  } = props;
+
+  const classes = [
+    styles.TableBodyRows,
+  ];
+
+  const paddingTop = virtualRows.length > 0 ? virtualRows?.[0]?.start || 0 : 0;
+  const paddingBottom =
+    virtualRows.length > 0
+      ? totalSize - (virtualRows?.[virtualRows.length - 1]?.end || 0)
+      : 0;
+
+  return (
+    <ErrorBoundary componentName={'TableBodyRows'}>
+      <TableBody
+        className={classes.join(' ')}
+      >
+        {paddingTop > 0 ? (
+          <TableRow>
+            <TableCell style={{height: `${paddingTop}px`}}/>
+          </TableRow>
+        ) : null}
+        {rows.length > 0 ? virtualRows.map((virtualRow) => {
+          const row = rows[virtualRow.index] as Row<any>;
+
+          return row ? (
+            <TableBodyRow
+              key={`row-${row.id}`}
+              row={row}
+              onClickRow={onClickRow}
+              rowActive={rowActive}
+              isExpanded={isExpanded}
+              link={link}
+              isWithSubRowsClick={isWithSubRowsClick}
+              renderSubComponent={renderSubComponent}
+            />
+          ) : null
+        }) : (
+          <TableRow
+            className={styles.noDataRow}
+          >
+            <TableCell colSpan={columnsSize}>
+              {noDataText || 'Данных нет'}
+            </TableCell>
+          </TableRow>
+        )}
+        {paddingBottom > 0 ? (
+          <TableRow>
+            <TableCell style={{height: `${paddingBottom}px`}}/>
+          </TableRow>
+        ) : null}
+      </TableBody>
+    </ErrorBoundary>
+  );
+};
+
+export default TableBodyRows;

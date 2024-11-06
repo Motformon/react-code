@@ -1,0 +1,29 @@
+.Dialog {
+  z-index: 1290!important;
+  .closeButton {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+  }
+  .title {
+    padding-right: 35px;
+  }
+  & :global {
+    .MuiPaper-root {
+      overflow-y: visible;
+      .MuiDialogContent-root {
+        overflow-y: visible;
+      }
+    }
+  }
+  &.DialogPaper {
+    & :global {
+      .MuiPaper-root {
+        overflow-y: auto;
+        .MuiDialogContent-root {
+          overflow-y: auto;
+        }
+      }
+    }
+  }
+}

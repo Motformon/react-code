@@ -1,0 +1,39 @@
+.TableHeadCell {
+  padding: 6px 10px 6px 10px !important;
+  border: 1px solid rgba(224, 224, 224, 1);
+  border-left: none;
+  vertical-align: top;
+  &:first-child {
+    border-left: 1px solid rgba(224, 224, 224, 1);
+  }
+  .sort {
+    flex-wrap: wrap;
+  }
+
+  &:hover {
+    .resizer {
+      opacity: 1;
+    }
+  }
+
+  .resizer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 5px;
+    background: #9e9e9e;
+    cursor: col-resize;
+    user-select: none;
+    touch-action: none;
+    opacity: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .resizer.isResizing {
+    background: #2196f3;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,11 @@
+.TableContainer {
+  max-height: calc(100vh - 160px);
+  width: 100%;
+  overflow: auto;
+
+  .ReactTable {
+    position: relative !important;
+    table-layout: fixed;
+    border-collapse: separate;
+  }
+}

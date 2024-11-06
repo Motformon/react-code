@@ -1,0 +1,22 @@
+.PercentCell {
+  position: relative;
+  padding-left: 5px;
+  padding-right: 5px;
+  z-index: 0;
+  border: 1px solid #bbdefb;
+  margin-top: 6px;
+  &:first-child {
+    margin-top: 0;
+  }
+  .bg {
+    height: 100%;
+    width: 0;
+    left: 0;
+    top: 0;
+    position: absolute;
+    background-color: #2196f3;
+    opacity: .5;
+    z-index: -1;
+  }
+}
+

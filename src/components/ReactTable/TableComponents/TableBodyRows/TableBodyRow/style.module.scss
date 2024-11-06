@@ -1,0 +1,25 @@
+.TableBodyRow {
+  text-decoration: none;
+  &.subRow {
+    background-color: #f8f8f8;
+    &:hover {
+      background-color: #f8f8f8;
+    }
+  }
+
+  &.rowActive {
+    background-color: rgba(0, 0, 0, 0.08) !important;
+  }
+  &.noRowHover {
+    cursor: auto;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+  &.rowClick {
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+}

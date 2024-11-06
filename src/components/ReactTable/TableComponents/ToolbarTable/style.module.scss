@@ -1,0 +1,40 @@
+.ToolbarTable {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  @media (min-width: 768px) {
+    flex-wrap: nowrap;
+  }
+  .visibleCount {
+    display: block;
+    margin-right: auto;
+    &.visibleCountWithToolbar {
+      margin-right: 6px;
+      margin-left: 6px;
+    }
+  }
+
+  .visibleRowsCount {
+    margin-left: 6px;
+  }
+
+  .updateBtn {
+    margin-left: 6px;
+  }
+
+  .chooserBtn {
+    margin-left: 6px;
+    margin-right: 12px;
+  }
+  .Pagination {
+    margin-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    margin-right: auto;
+  }
+
+  .search {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+}

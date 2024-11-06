@@ -1,0 +1,17 @@
+.FilterForm {
+  .formContent {
+    display: flex;
+    flex-direction: column;
+    .search {
+      margin-bottom: 6px;
+    }
+  }
+  .filterList {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    max-height: calc(100vh - 320px);
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
