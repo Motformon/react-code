@@ -63,8 +63,7 @@ const Search: React.FC<Props> = (props) => {
     <Paper component={'span'} className={classes.join(' ')} variant={isOutlined ? 'outlined' : 'elevation'}>
       <Controller
         name="value"
-        control={control}
-        //eslint-disable-next-line
+        control={control} 
         render={({field: {ref, ...field}}) => (
           <InputBase
             {...field}
