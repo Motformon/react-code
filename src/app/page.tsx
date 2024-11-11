@@ -6,9 +6,9 @@ export default function Home() {
 
   const links = [
     { href: '/table', title: 'Example React-Table' },
-    { href: '/calendar', title: 'Example Full-Calendar' },
-    { href: '/dnd', title: 'Example DnD Lists' },
-    { href: '/form', title: 'Example Form' },
+    // { href: '/dnd', title: 'Example DnD Lists' },
+    // { href: '/calendar', title: 'Example Full-Calendar' },
+    // { href: '/form', title: 'Example Form' },
   ];
 
   return (

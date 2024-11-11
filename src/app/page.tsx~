@@ -6,9 +6,9 @@ export default function Home() {
 
   const links = [
     { href: '/table', title: 'Example React-Table' },
-    { href: '/calendar', title: 'Example Full-Calendar' },
     { href: '/dnd', title: 'Example DnD Lists' },
-    { href: '/form', title: 'Example Form' },
+    // { href: '/calendar', title: 'Example Full-Calendar' },
+    // { href: '/form', title: 'Example Form' },
   ];
 
   return (
@@ -17,7 +17,7 @@ export default function Home() {
         <Image
           className={styles.logo}
           src="/react-code.svg"
-          alt="Next.js logo"
+          alt="react code logo"
           width={310}
           height={80}
           priority
